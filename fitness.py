@@ -2,10 +2,11 @@ solution = ""
 
 def calculateFitness(individual):
 	fitness = 0
+	print len(individual.get)
 	for i in range(individual.size()):
 		if(i > len(solution)):
 			break
-		elif(individual.getGene[i] == solution[i]):
+		elif(individual.getGene(i) == solution[i]):
 			fitness += 1
 	return fitness
 

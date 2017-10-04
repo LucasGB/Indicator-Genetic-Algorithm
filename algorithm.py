@@ -1,5 +1,5 @@
 from population import Population
-from fitness import setFitness, calculateFitness
+from fitness import calculateFitness
 
 class Algorithm(object):
 	def __init__(self):
@@ -8,15 +8,20 @@ class Algorithm(object):
 		self.tournamentSize = 5
 		self.elitism = True
 
+		self.population = []
+
+	"""
+	Returns the individual by index
+	"""
 	def getParentIndex(self, r, l):
 		l = [abs(r - p) for p in l]
-		return l.index(min(l))
+		return self.population.getIndividual(l.index(min(l)))
 
-	def evaluatePopulation():
-		for individual in population:
+	def evaluatePopulation(self):
+		for individual in self.population.getPopulation():
 			individual.setFitness(calculateFitness(individual))
 
-	def select():
+	def select(self):
 		select_probability = [individual.getFitness() for individual in population]
 
 		parent1 = getParentIndex(random(), select_probability)
@@ -24,10 +29,15 @@ class Algorithm(object):
 
 	#def crossover():
 
-	def run():
+	def run(self):
+		self.population = Population(5)
+		self.evaluatePopulation()
+		self.population.printPopulation()
+
 		
 
 		
 
 if __name__ == '__main__':
-	run()
+	ga = Algorithm()
+	ga.run()

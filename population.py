@@ -12,15 +12,18 @@ class Population(object):
 			i.generateIndividual()
 			self.individuals.append(i)
 
-	def getIndividual(index):
+	def getPopulation(self):
+		return self.individuals
+		
+	def getIndividual(self, index):
 		return self.individuals[index]
 
-	def getFittest():
+	def getFittest(self):
 		fittest = self.individuals[0]
 
-		for i in range(self.size()):
-			if(fittest.getFittest() <= getIndividual[i].getFittest()):
-				fittest = getIndividual[i]
+		for i in range(1, self.size()):
+			if(fittest.getFitness() <= self.getIndividual(i).getFitness()):
+				fittest = self.getIndividual(i)
 
 		return fittest
 
