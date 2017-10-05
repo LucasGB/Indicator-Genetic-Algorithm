@@ -1,17 +1,24 @@
-solution = ""
+
+class Solution(object):
+	def __init__(self, solution):
+		self.solution = solution
+
+	def getSolution(self):
+		return self.solution
+
+def setSolution(solution):
+	global __solution__
+	__solution__ = Solution(solution)
 
 def calculateFitness(individual):
 	fitness = 0
-	print len(individual.get)
+	s = __solution__.getSolution()
 	for i in range(individual.size()):
-		if(i > len(solution)):
+		if(i > len(s)):
 			break
-		elif(individual.getGene(i) == solution[i]):
+		elif(individual.getGene(i) == s[i]):
 			fitness += 1
 	return fitness
 
 def getMaxFitness():
 	return len(solution)
-
-def setSolution(solution):
-	solution = solution

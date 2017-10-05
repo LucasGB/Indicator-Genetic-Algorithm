@@ -1,5 +1,5 @@
 from population import Population
-from fitness import calculateFitness
+from fitness import calculateFitness, setSolution
 
 class Algorithm(object):
 	def __init__(self):
@@ -27,9 +27,13 @@ class Algorithm(object):
 		parent1 = getParentIndex(random(), select_probability)
 		parent2 = getParentIndex(random(), select_probability)
 
+		print parent1
+		print parent2
+
 	#def crossover():
 
 	def run(self):
+		setSolution("1111111111111111111111111111111111111111111111111111111111111111")
 		self.population = Population(5)
 		self.evaluatePopulation()
 		self.population.printPopulation()

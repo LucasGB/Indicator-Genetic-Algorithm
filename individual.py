@@ -12,8 +12,6 @@ class Individual(object):
 	def setDefaultGenomeLength(self, lengh):
 		self.defaultGenomeLength = lengh
 
-	def 
-
 	def getGene(self, index):
 		return self.genome[index]
 
