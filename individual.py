@@ -9,11 +9,17 @@ class Individual(object):
 	def generateIndividual(self):
 		self.genome = ''.join(str(randint(0,1)) for i in range(self.defaultGenomeLength))
 
+	def generateIndividual(self, parent1, parent2):
+		self.genome = parent1.getGenome()[start:end] + parent2.getGenome()[end:start]
+
 	def setDefaultGenomeLength(self, lengh):
 		self.defaultGenomeLength = lengh
 
 	def getGene(self, index):
 		return self.genome[index]
+
+	def getGenome(self):
+		return self.genome
 
 	def setGene(self, index, value):
 		self.genome[index] = value
@@ -26,6 +32,9 @@ class Individual(object):
 
 	def setFitness(self, fitness):
 		self.fitness = fitness
+
+	def getFitness(self):
+		return self.fitness
 
 	def printIndividual(self):
 		print self.genome

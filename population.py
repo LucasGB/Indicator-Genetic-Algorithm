@@ -12,6 +12,8 @@ class Population(object):
 			i.generateIndividual()
 			self.individuals.append(i)
 
+	def __init__(self, populationSize, )
+
 	def getPopulation(self):
 		return self.individuals
 		
